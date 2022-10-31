@@ -7,7 +7,7 @@
 int	main( void )
 {
 	
-	Bureaucrat bur("Bob", 120);
+	Bureaucrat bur("Bob", 149);
 
 	std::cout << bur << std::endl;
 	bur.increGrade();
@@ -15,10 +15,25 @@ int	main( void )
 	std::cout << bur << std::endl;
 	bur.decreGrade();
 	std::cout << bur.getGrade() << std::endl;
+	bur.decreGrade();
 
 
-	Bureaucrat bur1("Robert", 1510);
+	try {
+			Bureaucrat bur1("Robert", 1510);
+	}
+	catch (std::exception& e) {
 
+        std::cerr << e.what() << std::endl;
+    }
+	
+
+	try {
+			Bureaucrat bur1("Tom", 0);
+	}
+	catch (std::exception& e) {
+
+        std::cerr << e.what() << std::endl;
+    }
 	return 0;
 }
 

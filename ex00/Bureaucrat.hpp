@@ -5,7 +5,6 @@
 
 #include <ostream>
 #include <string>
-#include <stdexcept>
 
 class Bureaucrat {
 
@@ -16,6 +15,18 @@ class Bureaucrat {
 		~Bureaucrat( void );				//Canonique	
 
 		Bureaucrat &	operator=( Bureaucrat const & rhs );//Canonique
+
+		class GradeTooHighException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
+
+		class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
 
 		std::string	getName( void ) const;
 		int			getGrade( void ) const;
@@ -29,14 +40,6 @@ class Bureaucrat {
 		Bureaucrat( void );					//Canonique
 		const std::string	_name;
 		int					_grade;
-
-		class GradeTooHighException : public std::exception
-	{
-	};
-
-		class GradeTooLowException : public std::exception
-	{
-	};
 
 };
 
