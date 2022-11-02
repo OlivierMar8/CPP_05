@@ -24,20 +24,11 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name) {
 		}
 	}
 
-	catch (Bureaucrat::GradeTooLowException& e) {
+	catch (std::exception& e) {
 
-		std::cout << _name << " The grade is too low: " 
-			<< grade << std::endl;
+		std::cerr << e.what() << std::endl;
 	return;
 	}
-
-	catch (Bureaucrat::GradeTooHighException& e) {
-
-		std::cout << _name << " The grade is too high: "
-		   << grade	<< std::endl;
-	return;
-	}
-
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const & src ) {

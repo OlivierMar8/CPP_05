@@ -17,23 +17,9 @@ int	main( void )
 	std::cout << bur.getGrade() << std::endl;
 	bur.decreGrade();
 
+	Bureaucrat bur1("Tom", 0);
+	Bureaucrat bur2("Robert", 1510);
 
-	try {
-			Bureaucrat bur1("Robert", 1510);
-	}
-	catch (std::exception& e) {
-
-        std::cerr << e.what() << std::endl;
-    }
-	
-
-	try {
-			Bureaucrat bur1("Tom", 0);
-	}
-	catch (std::exception& e) {
-
-        std::cerr << e.what() << std::endl;
-    }
 	return 0;
 }
 

@@ -6,7 +6,7 @@ OBJS		= $(SRCS:.cpp=.o)
 
 NAME		= bureaucrat 
 
-CC			= c++ #c++-12
+CC			= c++-12 #c++-12
 
 RM			= rm -f
 
