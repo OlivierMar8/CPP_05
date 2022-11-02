@@ -1,4 +1,4 @@
-//main.cpp	CPP05	ex00
+//main.cpp	CPP05	ex01
 
 #include <iostream>
 #include "Bureaucrat.hpp"
