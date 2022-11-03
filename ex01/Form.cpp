@@ -4,14 +4,10 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form( void ) : _name( "" ), _signed(false), _signGrade(1), _execGrade(1) {
+Form::Form( void ) : _name( "" ), _signed(false), _signGrade(1), _execGrade(Bureaucrat::maxGrade) {
 
 	std::cout << "Form Default Constructor called" << std::endl;
-/*	_name = "";
-	_signed = false;
-	_signGrade = Bureaucrat::minGrade;
-	_execGrade = Bureaucrat::minGrade;
-*/	return;
+	return;
 }
 
 Form::Form( std::string n, int sg, int eg ) : _name( n ), _signed(false), _signGrade(sg), _execGrade(eg) {
@@ -20,7 +16,7 @@ Form::Form( std::string n, int sg, int eg ) : _name( n ), _signed(false), _signG
 	return;
 }
 
-Form::Form( Form const & src ) {
+Form::Form( Form const & src ) : _name( src.getName()), _signed( src.getSigned()), _signGrade( src.getSignGrade()), _execGrade( src.getExecGrade()) {
 
 	std::cout << "Form Copy Constructor called" << std::endl;
 	*this = src;
@@ -33,24 +29,22 @@ Form::~Form( void ) {
 		return;
 }
 
-Form &	Form::operator=( Form const & rhs) {
+Form &  Form::operator=( Form const & rhs) {
 
-		std::cout << "Assignement operator called" << std::endl;
+        std::cout << "Assignement operator called" << std::endl;
 
-		if ( this != &rhs ) {
-			_name = rhs.getName();
-			_signed = rhs.getSigned();
-			_signGrade = getSignGrade();
-			_execGrade = getExecGrade();
-		}
-		return *this;
+        if ( this != &rhs ) {
+            _signed = rhs.getSigned();
+            std::cout << "Only the isSigned has been copied. Others attributes are const !" << std::endl;
+        }
+        return *this;
 }
 
 const char* Form::GradeTooHighException::what () const throw() {
     return (" his grade is too high !");
 }
 
-const char* Bureaucrat::GradeTooLowException::what () const throw() {
+const char* Form::GradeTooLowException::what () const throw() {
     return (" his grade is too low !");
 }
 
@@ -71,8 +65,22 @@ int		Form::getSignGrade( void ) const {
 
 int		Form::getExecGrade( void ) const {
 
-		return _execGrad;
+		return _execGrade;
 }
+
+void	Form::beSigned( const Bureaucrat & b) {
+
+	if (_signed == false)
+	{
+		if ( _signGrade < b.getGrade())
+			throw Form::GradeTooLowException();
+		else
+			_signed = true;
+	}
+	else
+		std::cout << "The form " << _name << " is alredy signed." << std::endl;
+	return;
+}	
 
 std::ostream &	operator<<( std::ostream & o, Form const & i) {
 
