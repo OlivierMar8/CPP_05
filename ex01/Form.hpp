@@ -35,7 +35,7 @@ class Form {
 		int				getSignGrade( void ) const;
 		int				getExecGrade( void ) const;
 
-		void			beSigned( const Bureaucrat & b );
+		bool			beSigned( const Bureaucrat & b );
 
 	private:
 

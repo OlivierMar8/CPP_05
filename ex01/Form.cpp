@@ -68,18 +68,21 @@ int		Form::getExecGrade( void ) const {
 		return _execGrade;
 }
 
-void	Form::beSigned( const Bureaucrat & b) {
+bool	Form::beSigned( const Bureaucrat & b) {
 
 	if (_signed == false)
 	{
 		if ( _signGrade < b.getGrade())
 			throw Form::GradeTooLowException();
-		else
-			_signed = true;
+		else {
+				_signed = true;
+				return true;
+			}
 	}
-	else
-		std::cout << "The form " << _name << " is alredy signed." << std::endl;
-	return;
+	else {
+			std::cout << "The form " << _name << " is alredy signed." << std::endl;
+			return false;
+	}
 }	
 
 std::ostream &	operator<<( std::ostream & o, Form const & i) {
