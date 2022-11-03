@@ -34,6 +34,8 @@ class Bureaucrat {
 		void		increGrade( void );
 		void		decreGrade( void );
 
+		static const int	maxGrade = 1;
+		static const int	minGrade = 150;
 
 	private:
 
