@@ -2,14 +2,19 @@
 
 #include <iostream>
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-Form::Form( void ) {
+Form::Form( void ) : _name( "" ), _signed(false), _signGrade(1), _execGrade(1) {
 
 	std::cout << "Form Default Constructor called" << std::endl;
-	return;
+/*	_name = "";
+	_signed = false;
+	_signGrade = Bureaucrat::minGrade;
+	_execGrade = Bureaucrat::minGrade;
+*/	return;
 }
 
-Form::Form( int const n ) : _(name n ), _signed(false), _signGrad(sg), _execGrad(eg) {
+Form::Form( std::string n, int sg, int eg ) : _name( n ), _signed(false), _signGrade(sg), _execGrade(eg) {
 
 	std::cout << "Form Parametric Constructor called" << std::endl;
 	return;
@@ -30,11 +35,14 @@ Form::~Form( void ) {
 
 Form &	Form::operator=( Form const & rhs) {
 
-		std::cout << "Assignement mperator called" << std::endl;
+		std::cout << "Assignement operator called" << std::endl;
 
-
-		if ( this != &rhs )
-			this->_foo = rhs.getFoo();
+		if ( this != &rhs ) {
+			_name = rhs.getName();
+			_signed = rhs.getSigned();
+			_signGrade = getSignGrade();
+			_execGrade = getExecGrade();
+		}
 		return *this;
 }
 
@@ -56,12 +64,12 @@ bool	Form::getSigned( void ) const {
 		return _signed;
 }
 
-std::string	Form::getsSignGrade( void ) const {
+int		Form::getSignGrade( void ) const {
 
 		return _signGrade;
 }
 
-std::string	Form::getExecGrade( void ) const {
+int		Form::getExecGrade( void ) const {
 
 		return _execGrad;
 }
@@ -70,7 +78,7 @@ std::ostream &	operator<<( std::ostream & o, Form const & i) {
 
 	o << "Form name: " << i.getName() << "\n"
 		<< "Signed: " << i.getSigned() << "\n" 
-		<< "Grade to sign: " << i.getSignGrade<< "\n"
-		<< "Grade to execute: " << i.getExecGrade()  << "\n"
+		<< "Grade to sign: " << i.getSignGrade()<< "\n"
+		<< "Grade to execute: " << i.getExecGrade()  << "\n";
 	return o;
 }

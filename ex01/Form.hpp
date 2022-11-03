@@ -3,15 +3,18 @@
 #ifndef FORM_HPP
 # define FORM_HPP
 
-#include <ostream>
-#include <string>
+# include <ostream>
+# include <string>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 
 	public:
 
-		Form( int const n );
-		Form( std::string name, int siGrad, int exeGrad );
+		Form( void );					//Canonique
+		Form( std::string name, int sg, int eg );
 		Form( Form const & src );	//Canonique	
 		~Form( void );				//Canonique	
 
@@ -29,19 +32,18 @@ class Form {
 
 		std::string		getName( void ) const;
 		bool			getSigned( void ) const;
-		int				getSignGradie( void ) const;
+		int				getSignGrade( void ) const;
 		int				getExecGrade( void ) const;
 
-		void			beSigned( Bureaucrat b );
+		void			beSigned( const Bureaucrat & b );
 
 	private:
 
 		const std::string 		_name;
 		bool					_signed;
-		const int				_signGrad;
-		const int				_execGrad;
+		const int				_signGrade;
+		const int				_execGrade;
 
-		Form( void );					//Canonique
 };
 
 std::ostream &		operator<<( std::ostream & o, Form const & i );

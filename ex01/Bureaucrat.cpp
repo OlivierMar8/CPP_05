@@ -15,10 +15,10 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name) {
 	std::cout << "Parametric Constructor called" << std::endl;
 
 	try {
-		if (grade < 1)
-			throw Bureaucrat::GradeTooLowException();
-		else if (grade > 150)
+		if (grade < maxGrade)
 			throw Bureaucrat::GradeTooHighException();
+		else if (grade > minGrade)
+			throw Bureaucrat::GradeTooLowException();
 		else {
 			_grade = grade;
 		}
@@ -46,7 +46,7 @@ Bureaucrat::~Bureaucrat( void ) {
 
 Bureaucrat &	Bureaucrat::operator=( Bureaucrat const & rhs) {
 
-const		std::cout << "Assignement operator called" << std::endl;
+		std::cout << "Assignement operator called" << std::endl;
 
 		if ( this != &rhs ) {
 			*this = rhs;
@@ -76,7 +76,7 @@ int		Bureaucrat::getGrade( void) const {
 void	Bureaucrat::increGrade( void ) {
 
 	try {
-		if (_grade <= 1)
+		if (_grade <= maxGrade)
 			throw Bureaucrat::GradeTooHighException();
 		else 
 			_grade--;
@@ -90,41 +90,29 @@ void	Bureaucrat::increGrade( void ) {
 void	Bureaucrat::decreGrade( void ) {
 
 	try {
-		if (_grade >= 150)
-			throw Bureaucrat::GradeTooHighException();
+		if (_grade >= minGrade)
+			throw Bureaucrat::GradeTooLowException();
 		else
 			_grade++;
 	}
 
-	catch (Bureaucrat::GradeTooHighException& e) {
+	catch (Bureaucrat::GradeTooLowException& e) {
 		std::cerr << e.what() << std::endl;
 		}
 
 	return;
 }
 
-void	signForm( Form& fo) {
-	try
-	{
-		fo.beSigned(&this);
+void	Bureaucrat::signForm( Form & fo ) {
+	try {
+		fo.beSigned( *this );
 		std::cout << _name << " signed " << fo.getName() << std::endl;
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 	}
-/*
-	if (! fo.getSigned)
-		if (fo.getSignGrad <= _grade) {
-
-		}
-		else
-
-	else
-	{
-		std::cout << "Form " << fo.getName() << " already signed !"
-			<< std:endl;
 }
-*/
+
 std::ostream &	operator<<( std::ostream & o, Bureaucrat const & i) {
 
 	o << i.getName() <<" , bureaucrat grade " << i.getGrade();

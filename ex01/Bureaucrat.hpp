@@ -3,9 +3,11 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include <ostream>
-#include <string>
-#include "Form.hpp"
+# include <ostream>
+# include <string>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -17,24 +19,27 @@ class Bureaucrat {
 
 		Bureaucrat &	operator=( Bureaucrat const & rhs );//Canonique
 
-		class GradeTooHighException : public std::exception {
-
+		class GradeTooHighException : public std::exception
+	{
 		public:
 			virtual const char* what() const throw();
-		};
+	};
 
-	
-		class GradeTooLowException : public std::exception	{
+		class GradeTooLowException : public std::exception
+	{
 		public:
 			virtual const char* what() const throw();
-		};
+	};
 
 		std::string	getName( void ) const;
 		int			getGrade( void ) const;
 
 		void		increGrade( void );
 		void		decreGrade( void );
-		void		signForm( Form& fo );
+		void		signForm( Form & fo );
+
+		static const int	maxGrade = 1;
+		static const int	minGrade = 150;
 
 	private:
 

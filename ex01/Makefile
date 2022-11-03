@@ -1,10 +1,10 @@
 #Makefile   CPP04   ex01
 
-SRCS		= main.cpp Bureaucrat.cpp
+SRCS		= main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-NAME		= bureaucrat 
+NAME		= form 
 
 CC			= c++-12 #c++-12
 
