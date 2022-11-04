@@ -28,7 +28,7 @@ int	main( void )
 	Form com("commande", 50, 30);
 	Form nett("Nettoyage", 150, 51);
 	bur.signForm(com);
-	std::cout << com.getName() << " - " << com.getSigned() << std::endl;
+	std::cout << com  << std::endl;
 	bur1.signForm(com);
 	bur2.signForm(com);
 

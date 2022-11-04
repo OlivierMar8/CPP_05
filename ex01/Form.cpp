@@ -99,7 +99,7 @@ bool	Form::beSigned( const Bureaucrat & b) {
 std::ostream &	operator<<( std::ostream & o, Form const & i) {
 
 	o << "Form name: " << i.getName() << "\n"
-		<< "Signed: " << i.getSigned() << "\n" 
+		<< "Signed: " << (i.getSigned() ? "true" : "false") << "\n" 
 		<< "Grade to sign: " << i.getSignGrade()<< "\n"
 		<< "Grade to execute: " << i.getExecGrade()  << "\n";
 	return o;
