@@ -4,7 +4,7 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form( void ) : _name( "" ), _signed(false), _signGrade(1), _execGrade(Bureaucrat::maxGrade) {
+Form::Form( void ) : _name( "" ), _signed(false), _signGrade(Bureaucrat::maxGrade), _execGrade(Bureaucrat::maxGrade) {
 
 	std::cout << "Form Default Constructor called" << std::endl;
 	return;
@@ -13,6 +13,17 @@ Form::Form( void ) : _name( "" ), _signed(false), _signGrade(1), _execGrade(Bure
 Form::Form( std::string n, int sg, int eg ) : _name( n ), _signed(false), _signGrade(sg), _execGrade(eg) {
 
 	std::cout << "Form Parametric Constructor called" << std::endl;
+
+	 try {
+        if (sg < Bureaucrat::maxGrade || eg < Bureaucrat::maxGrade)
+            throw Form::GradeTooHighException();
+		else if (sg > Bureaucrat::maxGrade || eg > Bureaucrat::maxGrade)
+            throw Form::GradeTooLowException();
+    }
+    catch (std::exception& e) {
+
+        std::cerr << "The form " << e.what() << std::endl;
+    }
 	return;
 }
 
@@ -41,11 +52,11 @@ Form &  Form::operator=( Form const & rhs) {
 }
 
 const char* Form::GradeTooHighException::what () const throw() {
-    return (" his grade is too high !");
+    return (" grade is too high !");
 }
 
 const char* Form::GradeTooLowException::what () const throw() {
-    return (" his grade is too low !");
+    return (" grade is too low !");
 }
 
 std::string	Form::getName( void ) const {
@@ -76,12 +87,12 @@ bool	Form::beSigned( const Bureaucrat & b) {
 			throw Form::GradeTooLowException();
 		else {
 				_signed = true;
-				return true;
+				return false;
 			}
 	}
 	else {
 			std::cout << "The form " << _name << " is alredy signed." << std::endl;
-			return false;
+			return true;
 	}
 }	
 

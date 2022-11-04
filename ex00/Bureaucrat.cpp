@@ -27,8 +27,8 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name) {
 	catch (std::exception& e) {
 
 		std::cerr << e.what() << std::endl;
-	return;
 	}
+	return;
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const & src ) {

@@ -27,8 +27,8 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name) {
 	catch (std::exception& e) {
 
 		std::cerr << e.what() << std::endl;
-	return;
 	}
+	return;
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const & src ) {
@@ -104,14 +104,15 @@ void	Bureaucrat::decreGrade( void ) {
 }
 
 void	Bureaucrat::signForm( Form & fo ) {
+
 	try
    	{
-		fo.beSigned( *this );
-		std::cout << _name << " signed " << fo.getName() << std::endl;
+		if (! fo.beSigned( *this ))
+			std::cout << _name << " signed " << fo.getName() << std::endl;
 	}
 	catch (std::exception & e)
    	{
-		std::cout << _name << " could'nt sign " << fo.getName() << " because " 
+		std::cout << _name << " could'nt sign " << fo.getName() << " because his " 
 		<< e.what() << std::endl;
 	}
 }
