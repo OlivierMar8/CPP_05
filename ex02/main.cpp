@@ -19,14 +19,13 @@ int	main( void )
 
 	Bureaucrat bur1("Tom", 1);
 	Bureaucrat bur2("Robert", 50);
-
-	Form obj("Objet", 50, 0);
-	Form service("Service", 151, 140);
+/*	Form obj("Objet", 50, 0);
+//	Form service("Service", 151, 140);
 //	std::cout << obj.getName() << " - " << obj.getSignGrade() << std::endl;
 
 
-	Form com("commande", 50, 30);
-	Form nett("Nettoyage", 150, 51);
+//	Form com("commande", 50, 30);
+//	Form nett("Nettoyage", 150, 51);
 	bur.signForm(com);
 	std::cout << com  << std::endl;
 	bur1.signForm(com);
@@ -34,7 +33,7 @@ int	main( void )
 
 	bur.signForm(nett);
 	bur2.signForm(nett);
-
+*/
 	return 0;
 }
 

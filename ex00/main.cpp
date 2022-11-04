@@ -28,6 +28,9 @@ int	main( void )
 	bur3.increGrade();
 	std::cout << bur3 << std::endl;
 
+	Bureaucrat bur4(bur3);
+	std::cout << bur4 << std::endl;
+
 
 	return 0;
 }

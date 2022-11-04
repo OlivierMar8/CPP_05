@@ -19,6 +19,8 @@ int	main( void )
 
 	Bureaucrat bur1("Tom", 1);
 	Bureaucrat bur2("Robert", 50);
+	Bureaucrat bur4(bur);
+	std::cout << bur4 << std::endl;
 
 	Form obj("Objet", 50, 0);
 	Form service("Service", 151, 140);
@@ -35,6 +37,8 @@ int	main( void )
 	bur.signForm(nett);
 	bur2.signForm(nett);
 
+	Form my_copy(com);
+	std::cout << my_copy << std::endl;
 	return 0;
 }
 

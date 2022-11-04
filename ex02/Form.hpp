@@ -36,9 +36,9 @@ class Form {
 		int				getExecGrade( void ) const;
 
 		bool			beSigned( const Bureaucrat & b );
-		virtual bool	execute( const Bureaucrat & b ) = 0;
+		virtual bool	execute( const Bureaucrat & executor ) const = 0;
 
-	private:
+	protected:
 
 		const std::string 		_name;
 		bool					_signed;

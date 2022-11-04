@@ -31,10 +31,9 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name) {
 	return;
 }
 
-Bureaucrat::Bureaucrat( Bureaucrat const & src ) {
+Bureaucrat::Bureaucrat( Bureaucrat const & src ) : _name( src.getName()), _grade(src.getGrade()) {
 
 	std::cout << "Copy Constructor called" << std::endl;
-	*this = src;
 	return;
 }
 
@@ -44,14 +43,14 @@ Bureaucrat::~Bureaucrat( void ) {
 	return;
 }
 
+// _name assignement is not possible because it's const !
 Bureaucrat &	Bureaucrat::operator=( Bureaucrat const & rhs) {
 
 		std::cout << "Assignement operator called" << std::endl;
 
 		if ( this != &rhs ) {
-			*this = rhs;
+			_grade = rhs.getGrade();
 		}
-
 		return *this;
 }
 

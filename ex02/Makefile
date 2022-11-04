@@ -4,7 +4,7 @@ SRCS		= main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-NAME		= form 
+NAME		= form02
 
 CC			= c++-12 #c++-12
 

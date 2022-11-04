@@ -30,7 +30,7 @@ Form::Form( std::string n, int sg, int eg ) : _name( n ), _signed(false), _signG
 Form::Form( Form const & src ) : _name( src.getName()), _signed( src.getSigned()), _signGrade( src.getSignGrade()), _execGrade( src.getExecGrade()) {
 
 	std::cout << "Form Copy Constructor called" << std::endl;
-	*this = src;
+//	*this = src;
 	return;
 }
 
@@ -46,7 +46,6 @@ Form &  Form::operator=( Form const & rhs) {
 
         if ( this != &rhs ) {
             _signed = rhs.getSigned();
-            std::cout << "Only the isSigned has been copied. Others attributes are const !" << std::endl;
         }
         return *this;
 }
@@ -101,6 +100,6 @@ std::ostream &	operator<<( std::ostream & o, Form const & i) {
 	o << "Form name: " << i.getName() << "\n"
 		<< "Signed: " << (i.getSigned() ? "true" : "false") << "\n" 
 		<< "Grade to sign: " << i.getSignGrade()<< "\n"
-		<< "Grade to execute: " << i.getExecGrade()  << "\n";
+		<< "Grade to execute: " << i.getExecGrade();
 	return o;
 }
