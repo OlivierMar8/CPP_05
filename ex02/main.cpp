@@ -4,6 +4,7 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main( void )
 {
@@ -40,7 +41,6 @@ int	main( void )
 	bur1.executeForm(obj);
 	bur.signForm(nett);
 	bur2.signForm(nett);
-*/
 	RobotomyRequestForm roto("roto", "Pendulard");
 	bur.signForm(roto);
 	bur3.signForm(roto);
@@ -48,6 +48,15 @@ int	main( void )
 	bur2.executeForm(roto);
 	bur1.executeForm(roto);
 
+*/
+	PresidentialPardonForm pard("pard", "Veinard");
+	std::cout << pard << std::endl;
+	bur.signForm(pard);
+	bur3.signForm(pard);
+	bur.executeForm(pard);
+	bur2.executeForm(pard);
+	bur1.signForm(pard);
+	bur1.executeForm(pard);
 	return 0;
 }
 

@@ -16,7 +16,7 @@ const std::string ShrubberyCreationForm::_asciiTree =
 "              %;       %;%;      ,  ;       %;  ;%;   ,%;' \n";
 
 
-ShrubberyCreationForm::ShrubberyCreationForm( void ) : Form("ShrubberyDefault:", 145, 137), _target( "" ) {
+ShrubberyCreationForm::ShrubberyCreationForm( void ) : Form("ShrubberyDefault", 145, 137), _target( "" ) {
 
 	std::cout << "ShrubberyCreationForm Default Constructor called" << std::endl;
 	return;

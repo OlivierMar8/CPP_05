@@ -4,7 +4,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( void ) : Form("RobotomyDefault:", 72, 45), _target( "" ) {
+RobotomyRequestForm::RobotomyRequestForm( void ) : Form("RobotomyDefault", 72, 45), _target( "" ) {
 
 	std::cout << "RobotomyRequestForm Default Constructor called" << std::endl;
 	return;
