@@ -17,17 +17,17 @@ Form::Form( std::string n, int sg, int eg ) : _name( n ), _signed(false), _signG
 	 try {
         if (sg < Bureaucrat::maxGrade || eg < Bureaucrat::maxGrade)
             throw Form::GradeTooHighException();
-		else if (sg > Bureaucrat::maxGrade || eg > Bureaucrat::maxGrade)
+		else if (sg > Bureaucrat::minGrade || eg > Bureaucrat::minGrade)
             throw Form::GradeTooLowException();
     }
     catch (std::exception& e) {
 
-        std::cerr << "The form " << e.what() << std::endl;
+        std::cerr << "The form" << e.what() << std::endl;
     }
 	return;
 }
 
-Form::Form( Form const & src ) : _name( src.getName()), _signed( src.getSigned()), _signGrade( src.getSignGrade()), _execGrade( src.getExecGrade()) {
+Form::Form( Form const & src ) : _name( src.getName()), _signed(false), _signGrade( src.getSignGrade()), _execGrade( src.getExecGrade()) {
 
 	std::cout << "Form Copy Constructor called" << std::endl;
 	return;
@@ -38,7 +38,8 @@ Form::~Form( void ) {
 		std::cout << "Form Destructor called" << std::endl;
 		return;
 }
-
+ 
+// _name, grade assignement is not possible because const !
 Form &  Form::operator=( Form const & rhs) {
 
         std::cout << "Assignement operator called" << std::endl;
@@ -96,9 +97,9 @@ bool	Form::beSigned( const Bureaucrat & b) {
 
 std::ostream &	operator<<( std::ostream & o, Form const & i) {
 
-	o << "Form name: " << i.getName() << "\n"
-		<< "Signed: " << (i.getSigned() ? "true" : "false") << "\n" 
-		<< "Grade to sign: " << i.getSignGrade()<< "\n"
+	o << "Form name: " << i.getName() << "\n\t"
+		<< "Signed: " << (i.getSigned() ? "true" : "false") << "\n\t" 
+		<< "Grade to sign: " << i.getSignGrade()<< "\n\t"
 		<< "Grade to execute: " << i.getExecGrade();
 	return o;
 }

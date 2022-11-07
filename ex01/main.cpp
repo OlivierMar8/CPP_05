@@ -6,7 +6,7 @@
 
 int	main( void )
 {
-	
+/*	
 	Bureaucrat bur("Bob", 149);
 
 	std::cout << bur << std::endl;
@@ -21,12 +21,12 @@ int	main( void )
 	Bureaucrat bur2("Robert", 50);
 	Bureaucrat bur4(bur);
 	std::cout << bur4 << std::endl;
-
+*/
 	Form obj("Objet", 50, 0);
 	Form service("Service", 151, 140);
 //	std::cout << obj.getName() << " - " << obj.getSignGrade() << std::endl;
 
-
+/*
 	Form com("commande", 50, 30);
 	Form nett("Nettoyage", 150, 51);
 	bur.signForm(com);
@@ -39,6 +39,6 @@ int	main( void )
 
 	Form my_copy(com);
 	std::cout << my_copy << std::endl;
-	return 0;
+*/	return 0;
 }
 

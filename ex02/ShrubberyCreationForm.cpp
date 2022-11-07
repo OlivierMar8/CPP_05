@@ -47,7 +47,6 @@ ShrubberyCreationForm &  ShrubberyCreationForm::operator=( ShrubberyCreationForm
 
         if ( this != &rhs ) {
             _signed = rhs.getSigned();
-			//_target = rhs.getTarget();
         }
         return *this;
 }
@@ -59,10 +58,10 @@ std::string ShrubberyCreationForm::getTarget( void ) const {
 
 std::string ShrubberyCreationForm::getAsciiTree( void ) const {
 
-        return _aasciiTree;
+        return _asciiTree;
 }
 
-bool	ShrubberyCreationForm::execute( const Bureaucrat % executor) const {
+bool	ShrubberyCreationForm::execute( const Bureaucrat & executor) const {
 
 		if (_signed == true)
 		{
@@ -71,8 +70,8 @@ bool	ShrubberyCreationForm::execute( const Bureaucrat % executor) const {
 			std::ofstream	outFile;
 			std::string		fileName = this->getTarget();
 
-			filename.append("_srubbery");
-			outFile.open(filename.data());
+			fileName.append("_shrubbery");
+			outFile.open(fileName.data());
 			if (outFile.is_open()) {
 				outFile << this->getAsciiTree() << std::endl;
 				outFile << this->getAsciiTree() << std::endl;
@@ -80,7 +79,7 @@ bool	ShrubberyCreationForm::execute( const Bureaucrat % executor) const {
 				return true;
 			}
 			else {
-				std::cerr << "Error opening file " << filename << std::endl;	
+				std::cerr << "Error opening file " << fileName << std::endl;	
 				return false;
 			}
 		}
