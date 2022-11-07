@@ -30,7 +30,6 @@ Form::Form( std::string n, int sg, int eg ) : _name( n ), _signed(false), _signG
 Form::Form( Form const & src ) : _name( src.getName()), _signed( src.getSigned()), _signGrade( src.getSignGrade()), _execGrade( src.getExecGrade()) {
 
 	std::cout << "Form Copy Constructor called" << std::endl;
-//	*this = src;
 	return;
 }
 

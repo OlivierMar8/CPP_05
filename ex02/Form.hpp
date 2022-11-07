@@ -30,6 +30,17 @@ class Form {
             virtual const char* what() const throw();
 	    };
 
+/*        class NoExecTooLowException : public std::exception {
+        public:
+            virtual const char* what() const throw();
+	    };
+
+*/
+        class FormNotSignedException : public std::exception {
+        public:
+            virtual const char* what() const throw();
+	    };
+
 		std::string		getName( void ) const;
 		bool			getSigned( void ) const;
 		int				getSignGrade( void ) const;
@@ -43,6 +54,7 @@ class Form {
 		const std::string 		_name;
 		bool					_signed;
 		const int				_signGrade;
+
 		const int				_execGrade;
 
 };

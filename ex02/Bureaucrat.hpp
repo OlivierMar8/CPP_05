@@ -37,6 +37,7 @@ class Bureaucrat {
 		void		increGrade( void );
 		void		decreGrade( void );
 		void		signForm( Form & fo );
+		void		executeForm( Form const & form);
 
 		static const int	maxGrade = 1;
 		static const int	minGrade = 150;

@@ -30,7 +30,6 @@ Form::Form( std::string n, int sg, int eg ) : _name( n ), _signed(false), _signG
 Form::Form( Form const & src ) : _name( src.getName()), _signed( src.getSigned()), _signGrade( src.getSignGrade()), _execGrade( src.getExecGrade()) {
 
 	std::cout << "Form Copy Constructor called" << std::endl;
-	*this = src;
 	return;
 }
 
@@ -40,13 +39,13 @@ Form::~Form( void ) {
 		return;
 }
 
+// _name, grade assignement is not possible because const !
 Form &  Form::operator=( Form const & rhs) {
 
-        std::cout << "Assignement operator called" << std::endl;
+        std::cout << "Form assignement operator called" << std::endl;
 
         if ( this != &rhs ) {
             _signed = rhs.getSigned();
-            std::cout << "Only the isSigned has been copied. Others attributes are const !" << std::endl;
         }
         return *this;
 }
@@ -57,6 +56,10 @@ const char* Form::GradeTooHighException::what () const throw() {
 
 const char* Form::GradeTooLowException::what () const throw() {
     return (" grade is too low !");
+}
+
+const char* Form::FormNotSignedException::what () const throw() {
+    return (" is not signed !");
 }
 
 std::string	Form::getName( void ) const {
