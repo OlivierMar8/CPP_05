@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int	main( void )
 {
@@ -19,7 +20,8 @@ int	main( void )
 */
 	Bureaucrat bur1("Tom", 1);
 	Bureaucrat bur2("Robert", 50);
-	ShrubberyCreationForm obj("Plantation", "jardin");
+	Bureaucrat bur3("Max", 70);
+/*	ShrubberyCreationForm obj("Plantation", "jardin");
 //	Form service("Service", 151, 140);
 //	std::cout << obj.getName() << " - " << obj.getSignGrade() << std::endl;
 	ShrubberyCreationForm toc("relocation", "terrasse");
@@ -28,7 +30,7 @@ int	main( void )
 	bur2.signForm(toc);
 	bur.executeForm(toc);
 
-/*
+
 	Form com("commande", 50, 30);
 //	Form nett("Nettoyage", 150, 51);
 	bur.signForm(obj);
@@ -39,6 +41,13 @@ int	main( void )
 	bur.signForm(nett);
 	bur2.signForm(nett);
 */
+	RobotomyRequestForm roto("roto", "Pendulard");
+	bur.signForm(roto);
+	bur3.signForm(roto);
+	bur.executeForm(roto);
+	bur2.executeForm(roto);
+	bur1.executeForm(roto);
+
 	return 0;
 }
 

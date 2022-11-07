@@ -1,7 +1,7 @@
 //ShrubberyCreationForm.hpp	CPP05   ex02
 
-#ifndef SURUBBERYCREATIONFORM_HPP
-# define SURUBBERYCREATIONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
 # include <ostream>
 # include <string>

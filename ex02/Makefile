@@ -1,6 +1,7 @@
-#Makefile   CPP04   ex02
+#Makefile   CPP05   ex02
 
-SRCS		= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+SRCS		= main.cpp Bureaucrat.cpp Form.cpp \
+				ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

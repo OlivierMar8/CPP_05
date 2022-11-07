@@ -91,11 +91,11 @@ bool	ShrubberyCreationForm::execute( const Bureaucrat & executor) const {
 
 std::ostream &	operator<<( std::ostream & o, ShrubberyCreationForm const & i) {
 
-	o << "ShrubberyCreationForm name: " << i.getName() << "\n"
-		<< "Signed: " << (i.getSigned() ? "true" : "false") << "\n" 
-		<< "Grade to sign: " << i.getSignGrade()<< "\n"
-		<< "Grade to execute: " << i.getExecGrade()  << "\n"
-		<< "Target: " << i.getTarget() << "\n"
+	o << "ShrubberyCreationForm name: " << i.getName() << "\n\t"
+		<< "Signed: " << (i.getSigned() ? "true" : "false") << "\n\t" 
+		<< "Grade to sign: " << i.getSignGrade()<< "\n\t"
+		<< "Grade to execute: " << i.getExecGrade()  << "\n\t"
+		<< "Target: " << i.getTarget() << "\n\t"
 		<< "Ascii Tree:\n " << i.getAsciiTree() << "\n"; 
 	return o;
 }
