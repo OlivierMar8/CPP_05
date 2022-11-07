@@ -4,19 +4,19 @@
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( void ) : Form("RobotomyDefault", 72, 45), _target( "" ) {
+RobotomyRequestForm::RobotomyRequestForm( void ) : Form("Robotomy", 72, 45), _target( "" ) {
 
 	std::cout << "RobotomyRequestForm Default Constructor called" << std::endl;
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm( std::string n, std::string target ) : Form(n, 72, 45),  _target( target ) {
+RobotomyRequestForm::RobotomyRequestForm( std::string target ) : Form("Robotomy", 72, 45),  _target( target ) {
 
 	std::cout << "RobotomyRequestForm Parametric Constructor called" << std::endl;
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const & src ) : Form(src.getName(), src.getSignGrade(), src.getExecGrade()), _target( src.getTarget()) {
+RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const & src ) : Form("Robotomy", src.getSignGrade(), src.getExecGrade()), _target( src.getTarget()) {
 
 	std::cout << "RobotomyRequestForm Copy Constructor called" << std::endl;
 	return;

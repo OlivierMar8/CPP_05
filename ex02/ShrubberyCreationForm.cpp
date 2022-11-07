@@ -16,19 +16,19 @@ const std::string ShrubberyCreationForm::_asciiTree =
 "              %;       %;%;      ,  ;       %;  ;%;   ,%;' \n";
 
 
-ShrubberyCreationForm::ShrubberyCreationForm( void ) : Form("ShrubberyDefault", 145, 137), _target( "" ) {
+ShrubberyCreationForm::ShrubberyCreationForm( void ) : Form("Shrubbery", 145, 137), _target( "" ) {
 
 	std::cout << "ShrubberyCreationForm Default Constructor called" << std::endl;
 	return;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( std::string n, std::string target ) : Form(n, 145, 137),  _target( target ) {
+ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : Form("Shrubbery", 145, 137),  _target( target ) {
 
 	std::cout << "ShrubberyCreationForm Parametric Constructor called" << std::endl;
 	return;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & src ) : Form(src.getName(), src.getSignGrade(), src.getExecGrade()), _target( src.getTarget()) {
+ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & src ) : Form("Shrubbery", src.getSignGrade(), src.getExecGrade()), _target( src.getTarget()) {
 
 	std::cout << "ShrubberyCreationForm Copy Constructor called" << std::endl;
 	return;

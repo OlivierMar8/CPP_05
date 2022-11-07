@@ -11,7 +11,7 @@ class ShrubberyCreationForm : public Form {
 
 	public:
 
-		ShrubberyCreationForm( std::string name, std::string target );
+		ShrubberyCreationForm( std::string target );
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );	//Canonique	
 		~ShrubberyCreationForm( void );				//Canonique	
 

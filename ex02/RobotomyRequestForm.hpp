@@ -11,7 +11,7 @@ class RobotomyRequestForm : public Form {
 
 	public:
 
-		RobotomyRequestForm( std::string name, std::string target );
+		RobotomyRequestForm( std::string target );
 		RobotomyRequestForm( RobotomyRequestForm const & src );	//Canonique	
 		~RobotomyRequestForm( void );				//Canonique	
 

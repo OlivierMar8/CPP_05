@@ -11,7 +11,7 @@ class PresidentialPardonForm : public Form {
 
 	public:
 
-		PresidentialPardonForm( std::string name, std::string target );
+		PresidentialPardonForm( std::string target );
 		PresidentialPardonForm( PresidentialPardonForm const & src );	//Canonique	
 		~PresidentialPardonForm( void );				//Canonique	
 

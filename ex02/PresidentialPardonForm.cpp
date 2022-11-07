@@ -4,19 +4,19 @@
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm( void ) : Form("RobotomyDefault", 25, 5), _target( "" ) {
+PresidentialPardonForm::PresidentialPardonForm( void ) : Form("Robotomy", 25, 5), _target( "" ) {
 
 	std::cout << "PresidentialPardonForm Default Constructor called" << std::endl;
 	return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( std::string n, std::string target ) : Form(n, 25, 5),  _target( target ) {
+PresidentialPardonForm::PresidentialPardonForm( std::string target ) : Form("Robotomy", 25, 5),  _target( target ) {
 
 	std::cout << "PresidentialPardonForm Parametric Constructor called" << std::endl;
 	return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( PresidentialPardonForm const & src ) : Form(src.getName(), src.getSignGrade(), src.getExecGrade()), _target( src.getTarget()) {
+PresidentialPardonForm::PresidentialPardonForm( PresidentialPardonForm const & src ) : Form("Robotomy", src.getSignGrade(), src.getExecGrade()), _target( src.getTarget()) {
 
 	std::cout << "PresidentialPardonForm Copy Constructor called" << std::endl;
 	return;
