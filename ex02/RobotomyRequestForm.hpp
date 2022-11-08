@@ -18,7 +18,6 @@ class RobotomyRequestForm : public Form {
 		RobotomyRequestForm &	operator=( RobotomyRequestForm const & rhs );//Canonique
 
 		std::string getTarget( void ) const;
-		std::string getAsciiTree( void ) const;
 
 		bool	execute( const Bureaucrat & executor ) const;
 		

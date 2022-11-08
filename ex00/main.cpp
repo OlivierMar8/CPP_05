@@ -30,7 +30,8 @@ int	main( void )
 
 	Bureaucrat bur4(bur3);
 	std::cout << bur4 << std::endl;
-
+	bur4 = bur;
+	std::cout << bur4 << std::endl;
 
 	return 0;
 }

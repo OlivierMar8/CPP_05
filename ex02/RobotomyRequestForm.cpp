@@ -1,6 +1,7 @@
 //RobotomyRequestForm.cpp    CPP05    ex02
 
 #include <iostream>
+#include <cstdlib>
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
@@ -28,7 +29,7 @@ RobotomyRequestForm::~RobotomyRequestForm( void ) {
 		return;
 }
 
-// _name, grade assignement is not possible because const !
+// _name, grade, target assignement is not possible because const !
 RobotomyRequestForm &  RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs) {
 
         std::cout << "RobotomyRequestForm assignement operator called" << std::endl;
@@ -51,7 +52,16 @@ bool	RobotomyRequestForm::execute( const Bureaucrat & executor) const {
 			if ( _signGrade < executor.getGrade())
 	            throw Form::GradeTooLowException();
 			std::cout << "Brrrrrrrrrrrrrrrrrrrrrrrr..." << std::endl;
-			return true;
+			if (std::rand() % 100 > 50)
+			{
+				std::cout << _target << " has been robotomized !" << std::endl;
+				return true;
+			}
+			else
+			{
+				std::cout << "Robotomization was unsuccessful !" << std::endl;
+				return false;
+			}
 		}
 		else
 			throw Form::FormNotSignedException();

@@ -13,7 +13,6 @@ class Form {
 
 	public:
 
-		Form( void );					//Canonique
 		Form( std::string name, int sg, int eg );
 		Form( Form const & src );	//Canonique	
 		virtual~Form( void );				//Canonique	
@@ -30,12 +29,6 @@ class Form {
             virtual const char* what() const throw();
 	    };
 
-/*        class NoExecTooLowException : public std::exception {
-        public:
-            virtual const char* what() const throw();
-	    };
-
-*/
         class FormNotSignedException : public std::exception {
         public:
             virtual const char* what() const throw();
@@ -54,8 +47,9 @@ class Form {
 		const std::string 		_name;
 		bool					_signed;
 		const int				_signGrade;
-
 		const int				_execGrade;
+		
+		Form( void );					//Canonique
 
 };
 

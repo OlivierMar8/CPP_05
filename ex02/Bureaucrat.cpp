@@ -136,14 +136,9 @@ void	Bureaucrat::executeForm( Form const & form ) {
 	}
 }	
 
-
-
-
-
-
 std::ostream &	operator<<( std::ostream & o, Bureaucrat const & i) {
 
-	o << i.getName() <<" , bureaucrat grade " << i.getGrade();
+	o << i.getName() <<", bureaucrat grade " << i.getGrade();
 
 	return o;
 }

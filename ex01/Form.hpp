@@ -13,7 +13,6 @@ class Form {
 
 	public:
 
-		Form( void );					//Canonique
 		Form( std::string name, int sg, int eg );
 		Form( Form const & src );	//Canonique	
 		~Form( void );				//Canonique	
@@ -44,6 +43,7 @@ class Form {
 		const int				_signGrade;
 		const int				_execGrade;
 
+		Form( void );					//Canonique
 };
 
 std::ostream &		operator<<( std::ostream & o, Form const & i );

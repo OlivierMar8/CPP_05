@@ -94,7 +94,7 @@ bool	Form::beSigned( const Bureaucrat & b) {
 			}
 	}
 	else {
-			std::cout << "The form " << _name << " is alredy signed." << std::endl;
+			std::cout << "The form " << _name << " is already signed." << std::endl;
 			return true;
 	}
 }	

@@ -18,7 +18,6 @@ class PresidentialPardonForm : public Form {
 		PresidentialPardonForm &	operator=( PresidentialPardonForm const & rhs );//Canonique
 
 		std::string getTarget( void ) const;
-		std::string getAsciiTree( void ) const;
 
 		bool	execute( const Bureaucrat & executor ) const;
 		
