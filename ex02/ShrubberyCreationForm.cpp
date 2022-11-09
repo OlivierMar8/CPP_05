@@ -6,14 +6,19 @@
 #include "Bureaucrat.hpp"
 
 const std::string ShrubberyCreationForm::_asciiTree =
-"                                                         .\n"
-"                                              .         ;  \n"
-"                 .              .              ;%     ;;   \n"
-"                   ,           ,                :;%  %;   \n"
-"                    :         ;                   :;%;'     .,   \n"
-"          ,.        %;     %;            ;        %;'    ,;\n"
-"             ;       ;%;  %%;        ,     %;    ;%;    ,%'\n"
-"              %;       %;%;      ,  ;       %;  ;%;   ,%;' \n";
+"                          MM                              \n"
+"                         MMMM                             \n"
+"         ==             MMMMMM                  N         \n"
+"        ====           MMMMMMMM                NNM        \n"
+"       ======         MMMMMMMMMM              NNNNN       \n"
+"     ==========      MMMMMMMMMMMM          NNNNNNNNNNN    \n"
+"    ============      MMMMMMMMMM         NNNNNN W NNNNNN  \n"
+"         ||            MMMMMMMM        NNNNNNNN W NNNNNNNN\n"
+"         ||               ||                    W         \n"
+"         ||              ||||                   W         \n"
+"         ||             ||||||                  W         \n"
+"==========================================================\n";
+
 
 
 ShrubberyCreationForm::ShrubberyCreationForm( void ) : Form("Shrubbery", 145, 137), _target( "" ) {
@@ -74,7 +79,6 @@ bool	ShrubberyCreationForm::execute( const Bureaucrat & executor) const {
 			outFile.open(fileName.data());
 			if (outFile.is_open()) {
 				outFile << this->getAsciiTree() << std::endl;
-				outFile << this->getAsciiTree() << std::endl;
 				outFile.close();
 				return true;
 			}
@@ -95,7 +99,7 @@ std::ostream &	operator<<( std::ostream & o, ShrubberyCreationForm const & i) {
 		<< "Signed: " << (i.getSigned() ? "true" : "false") << "\n\t" 
 		<< "Grade to sign: " << i.getSignGrade()<< "\n\t"
 		<< "Grade to execute: " << i.getExecGrade()  << "\n\t"
-		<< "Target: " << i.getTarget() << "\n\t"
-		<< "Ascii Tree:\n " << i.getAsciiTree() << "\n"; 
+		<< "Target: " << i.getTarget() << "\n\t";
+//		<< "Ascii Tree:\n " << i.getAsciiTree() << "\n"; 
 	return o;
 }
