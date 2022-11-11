@@ -1,7 +1,7 @@
 //RobotomyRequestForm.cpp    CPP05    ex03
 
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib>   //rand
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 

@@ -99,7 +99,7 @@ std::ostream &	operator<<( std::ostream & o, ShrubberyCreationForm const & i) {
 		<< "Signed: " << (i.getSigned() ? "true" : "false") << "\n\t" 
 		<< "Grade to sign: " << i.getSignGrade()<< "\n\t"
 		<< "Grade to execute: " << i.getExecGrade()  << "\n\t"
-		<< "Target: " << i.getTarget() << "\n\t";
-//		<< "Ascii Tree:\n " << i.getAsciiTree() << "\n"; 
+		<< "Target: " << i.getTarget() << "\n\t"
+		<< "Ascii Tree:\n " << i.getAsciiTree() << "\n"; 
 	return o;
 }

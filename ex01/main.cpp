@@ -31,12 +31,12 @@ int	main( void )
 	std::cout << my_copy << std::endl;
 	return 0;
 }
+
 /*
 //Main.cpp ex01 Test Form
 int	main( void ) {
     Form bur("Bob", 149, 40);
 
-    std::cout << bur << std::endl;
     std::cout << bur << std::endl;
 
     Form bur1("Tom", 0, 100);
@@ -51,8 +51,6 @@ int	main( void ) {
     bur4 = bur;
     std::cout << bur4 << std::endl;
 }
-
-
 */
 /*
 //Main ex00  Test Bureaucrat

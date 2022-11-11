@@ -6,7 +6,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
-/*
+
 int	main( void )
 {
 	
@@ -52,7 +52,7 @@ int	main( void )
 	delete rrf;
 	return 0;
 }
-*/
+
 /*
 // test ex02 projet
 int	main( void )
@@ -125,7 +125,7 @@ int main( void ) {
 }
 */	
 
-
+/*
 // Test Presidential
 int main( void ) {
 //	PresidentialPardonForm a;
@@ -139,8 +139,9 @@ int main( void ) {
 	std::cout << ab << std::endl;
 	return 0;
 }
-
-/*	
+*/
+/*
+	
 // Test Robotomy
 int main( void ) {
 //	RobotomyRequestForm a;
@@ -250,6 +251,5 @@ int main( void )
 
     return 0;
 } 
+
 */
-
-

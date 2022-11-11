@@ -42,7 +42,7 @@ Form::~Form( void ) {
 // _name, grade assignement is not possible because const !
 Form &  Form::operator=( Form const & rhs) {
 
-        std::cout << "Assignement operator called" << std::endl;
+        std::cout << "Form Assignement operator called" << std::endl;
 
         if ( this != &rhs ) {
             _signed = rhs.getSigned();
@@ -90,7 +90,7 @@ bool	Form::beSigned( const Bureaucrat & b) {
 			}
 	}
 	else {
-			std::cout << "The form " << _name << " is alredy signed." << std::endl;
+			std::cout << "The form " << _name << " is already signed." << std::endl;
 			return true;
 	}
 }	

@@ -1,4 +1,4 @@
-#Makefile   CPP04   ex00
+#Makefile   CPP05   ex00
 
 SRCS		= main.cpp Bureaucrat.cpp
 
@@ -6,11 +6,11 @@ OBJS		= $(SRCS:.cpp=.o)
 
 NAME		= bureaucrat 
 
-CC			= c++-12 #c++-12
+CC			= c++ #c++-12
 
 RM			= rm -f
 
-CFLAGS		= -Wall -Werror -Wextra -std=c++98 -g
+CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
 
 all:		${NAME}

@@ -44,18 +44,26 @@ Form*	Intern::makeForm(std::string name, std::string target ) {
 		if (name == form_list[i])
 			break;
 	}
-	switch (i)
+	if ( i == 3 )
 	{
-		case 0 :	fo = new ShrubberyCreationForm(target);
-					break;
-		case 1 : 	fo = new RobotomyRequestForm(target);
-					break;
-		case 2 :	fo = new PresidentialPardonForm(target);
-	}	
-	if (i >= 0 && i <= 2)
-		std::cout << "Intern creates " << name << std::endl;	
-	else
-		std::cout << "Intern did'nt find this type of form !" << std::endl;
-
+		std::cout << "Intern did'nt find this type of form: "
+		   << name	<< std::endl;
+		return fo;
+	}
+	try
+	{
+		switch (i)
+		{
+			case 0 :	fo = new ShrubberyCreationForm(target);
+						break;
+			case 1 : 	fo = new RobotomyRequestForm(target);
+						break;
+			case 2 :	fo = new PresidentialPardonForm(target);
+		}	
+	}
+	catch ( std::bad_alloc & ba ) {
+		std::cerr << "Allocation new form failed !" << std::endl;
+	}
+	std::cout << "Intern creates " << name << std::endl;	
 	return fo;
 }

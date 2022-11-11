@@ -6,13 +6,13 @@
 
 Bureaucrat::Bureaucrat( void ) {
 
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Bureaucrat Default Constructor called" << std::endl;
 	return;
 }
 
 Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name) {
 
-	std::cout << "Parametric Constructor called" << std::endl;
+	std::cout << "Bureaucrat Parametric Constructor called" << std::endl;
 
 	try {
 		if (grade < maxGrade)
@@ -33,20 +33,20 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name) {
 
 Bureaucrat::Bureaucrat( Bureaucrat const & src ) : _name( src.getName()), _grade(src.getGrade()) {
 
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "Bureaucrat Copy Constructor called" << std::endl;
 	return;
 }
 
 Bureaucrat::~Bureaucrat( void ) {
 
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Bureaucrat Destructor called" << std::endl;
 	return;
 }
 
 // _name assignement is not possible because it's const !
 Bureaucrat &	Bureaucrat::operator=( Bureaucrat const & rhs) {
 
-		std::cout << "Assignement operator called" << std::endl;
+		std::cout << "Bureaucrat Assignement operator called" << std::endl;
 
 		if ( this != &rhs ) {
 			_grade = rhs.getGrade();
@@ -132,7 +132,8 @@ void	Bureaucrat::executeForm( Form const & form ) {
 	}
 	catch (Form::FormNotSignedException & e)
 	{
-		std::cout << "The form " << form.getName() << " is not signed !" << std::endl;
+		std::cout << _name << " could'nt execute " << form.getName()
+		   	<< " because the form is not signed !" << std::endl;
 	}
 }	
 

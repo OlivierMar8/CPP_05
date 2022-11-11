@@ -8,11 +8,11 @@ OBJS		= $(SRCS:.cpp=.o)
 
 NAME		= form02
 
-CC			= c++-12 #c++-12
+CC			= c++ #c++-12
 
 RM			= rm -f
 
-CFLAGS		= -Wall -Werror -Wextra -std=c++98 -g
+CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
 
 all:		${NAME}
